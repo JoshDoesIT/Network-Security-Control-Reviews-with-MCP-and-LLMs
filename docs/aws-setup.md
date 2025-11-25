@@ -338,20 +338,8 @@ Terraform deploys a complete AWS test environment demonstrating NSCs at multiple
 
 **📋 For complete details of all Security Group and Network ACL rules**, including protocol, port, source/destination CIDR blocks, and rule numbers, see the [Terraform README](../terraform/README.md#network-security-control-nsc-rules-reference).
 
-### Key Features of the Infrastructure
+### Infrastructure Components
 
-**NSC Examples at Multiple Layers:**
-- **Instance-level NSCs**: Security Groups provide stateful, instance-level firewall rules
-- **Subnet-level NSCs**: Network ACLs provide stateless, subnet-level firewall rules
-- **Segmentation Testing**: Intentional cross-VPC rules in Network ACLs demonstrate how subnet-level NSCs can override instance-level isolation
-
-**Educational Purpose:**
-- Security Groups demonstrate proper isolation (no cross-VPC references possible)
-- Network ACLs demonstrate segmentation violations (cross-VPC rules intentionally included)
-- Development environment includes overly permissive Security Group rules for security review practice
-- Both NSC types are tagged for environment identification and filtering
-
-**Infrastructure Components:**
 - 2 VPCs (production and development)
 - 2 Internet Gateways (one per VPC)
 - 2 Public Subnets (one per VPC)
